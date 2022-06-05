@@ -584,6 +584,7 @@ router.post("/genre-games/", (req, res) => {
     Game.find({category:req.body.genre, first_scene:{$exists:true}})
         .limit(8)
         .exec((err, games) => {
+            console.log(req.body.genre)
             if (err) return res.status(400).send(err);
             res.status(200).json({ success: true, games });
         });
