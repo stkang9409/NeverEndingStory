@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://api.iovar2.com/api/:path*"
+    },
+    {
+      "source": "/api/:path*/",
+      "destination": "https://api.iovar2.com/api/:path*/"
+    }
+  ]
+}
