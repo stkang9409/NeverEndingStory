@@ -28,12 +28,14 @@ import { useConstructor } from './functions/useConstructor';
 import { useDispatch } from 'react-redux';
 import { auth } from '../_actions/user_actions';
 import LoadingPage from './views/GamePlayPage/LoadingPage';
-
+import axios from 'axios';
 const config = require('../config/key');
 // export let socket = io(`http://${LOCAL_HOST}:5000`, {transports : ['websocket']});
 export let socket = io(config.SOCKET, { transports: ['websocket'] });
 export const MS_PER_HR = 360000
 
+
+axios.defaults.baseURL = config.SERVER;
 function App() {
   const [loaded, setloaded] = useState(false);
   const dispatch = useDispatch();
