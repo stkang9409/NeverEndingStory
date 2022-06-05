@@ -84,6 +84,7 @@ function LandingPage(props) {
 
     Axios.post("/api/game/genre-games/", {genre:"추리"}).then((response) => {
       if (response.data.success) {
+        console.log(response.data.games);
         setmysteryGames(response.data.games);
       } else {
         console.log("추리 장르 게임 로드에 load에 실패했습니다.");
