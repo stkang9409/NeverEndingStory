@@ -6,8 +6,10 @@ const sessionOption = {
     saveUninitialized: true,
     secret: process.env.COOKIE_SECRET,
     cookie: {
-        domain:'www.iovar2.com',
+        domain:'.iovar2.com',
+        sameSite : "none",
         secure: true,
+        httpOnly: true
     },
 }
 
