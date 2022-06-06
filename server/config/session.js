@@ -7,6 +7,7 @@ const sessionOption = {
     secret: process.env.COOKIE_SECRET,
     cookie: {
         domain:'.iovar2.com',
+        secure: true,
     },
 }
 
