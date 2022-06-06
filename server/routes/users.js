@@ -70,7 +70,10 @@ router.post("/login", (req, res) => {
                 if (err) return res.status(400).send(err);
                 res.cookie("w_authExp", user.tokenExp);
                 return res
-                    .cookie("w_auth", user.token)
+                    .cookie("w_auth", user.token, {
+        domain:'www.iovar2.com',
+        secure: true,
+    })
                     .status(200)
                     .json({
                         loginSuccess: true, userId: user._id
