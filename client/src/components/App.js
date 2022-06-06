@@ -36,6 +36,7 @@ export const MS_PER_HR = 360000
 
 
 axios.defaults.baseURL = config.SERVER;
+axios.defaults.withCredentials = true;
 function App() {
   const [loaded, setloaded] = useState(false);
   const dispatch = useDispatch();
