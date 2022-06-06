@@ -66,9 +66,10 @@ router.post("/login", (req, res) => {
                 return res.json({ loginSuccess: false, message: "Wrong password" });
 
             user.generateToken((err, user) => {
+                console.log(user);
                 if (err) return res.status(400).send(err);
                 res.cookie("w_authExp", user.tokenExp);
-                res
+                return res
                     .cookie("w_auth", user.token)
                     .status(200)
                     .json({
