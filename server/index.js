@@ -18,6 +18,7 @@ const sessionOption =require("./config/session")
 
 const {sanitize} = require("./lib/sanitize")
 const app = express();
+app.set("etag", false);
 const connect = mongoose.connect(config.mongoURI,
   {
     useNewUrlParser: true, useUnifiedTopology: true,
