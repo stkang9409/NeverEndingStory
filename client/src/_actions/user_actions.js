@@ -5,11 +5,8 @@ import {
     AUTH_USER,
     LOGOUT_USER,
 } from './types';
-
-const config = require('../config/key');
 import { USER_SERVER } from '../components/Config.js';
 
-axios.defaults.baseURL = config.SERVER;
 export function registerUser(dataToSubmit){
     const request = axios.post(`${USER_SERVER}/register`,dataToSubmit)
         .then(response => response.data);
