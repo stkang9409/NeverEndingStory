@@ -31,7 +31,7 @@ let redisClient;
 if(process.env.NODE_ENV === 'production'){
   redisClient  = redis.createClient({
     url : `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
-    password :process.env.REDIS_PASSWORD,
+//     password :process.env.REDIS_PASSWORD,
   })
 }
   
