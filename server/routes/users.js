@@ -14,6 +14,7 @@ const { objCmp } = require('../lib/object');
 //=================================
 
 router.get("/auth", auth, (req, res) => {
+    console.log("why no work - auth")
     res.status(200).json({
         _id: req.user._id,
         isAdmin: req.user.role === 0 ? false : true,
