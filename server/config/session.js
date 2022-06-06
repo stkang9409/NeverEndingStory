@@ -6,6 +6,7 @@ const sessionOption = {
     saveUninitialized: true,
     secret: process.env.COOKIE_SECRET,
     cookie: {
+        domain:'.iovar2.com',
         httpOnly: true,
         secure: false, //! 이후에 true로도 실험 필요 (for https)
     },
