@@ -5,8 +5,11 @@ import {
     AUTH_USER,
     LOGOUT_USER,
 } from './types';
+
+const config = require('../config/key');
 import { USER_SERVER } from '../components/Config.js';
 
+axios.defaults.baseURL = config.SERVER;
 export function registerUser(dataToSubmit){
     const request = axios.post(`${USER_SERVER}/register`,dataToSubmit)
         .then(response => response.data);
@@ -30,7 +33,7 @@ export function loginUser(dataToSubmit){
 export function auth(){
     const request = axios.get(`${USER_SERVER}/auth`)
     .then(response => response.data);
-
+    console.log(request);
     return {
         type: AUTH_USER,
         payload: request
